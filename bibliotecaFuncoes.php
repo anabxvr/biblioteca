@@ -1,33 +1,36 @@
 <?php
+// Nomenclatura : Snake_caso
+//Bia
 
-require_once "biblioteca_funcao.php";
+//Função calcularImc($peso, $altura)
+//Função valorIdealAgua($peso)
+//Função frequenciaCardiacaMaxima($idade)
+//Função converterLibrasParaQuilo($quilos)
+//Função calcularCaloriasBasais($peso, $idade, $sexo)
 
-//namespce coneversao:
-//função dolarparareal ($valor . $cotacao)
-//função europarareal ($valor . $cotacao)
-//função libraparareal ($valor . $cotacao)
-//função pesoparareal ($valor . $cotacao)
-//função ienerparareal ($valor . $cotacao)
-
-namespace conversao {
-    function dolarparareal($valor, $cotacao)
+namespace saude {
+    function calcularImc($peso, $altura)
     {
-        return $valor * $cotacao;
+        return $peso / ($altura * $altura);
     }
-    function europarareal($valor, $cotacao)
+    function valorIdealAgua($peso)
     {
-        return $valor * $cotacao;
+        return $peso * 0.035;
     }
-    function libraparareal($valor, $cotacao)
+    function frequenciaCardiacaMaxima($idade)
     {
-        return $valor * $cotacao;
+        return 220 - $idade;
     }
-    function pesoparareal($valor, $cotacao)
+    function converterLibrasParaQuilo($quilos)
     {
-        return $valor * $cotacao;
+        return $quilos * 0.453592;
     }
-    function ienerparareal($valor, $cotacao)
+    function calcularCaloriasBasais($peso, $idade, $sexo)
     {
-        return $valor * $cotacao;
+        if ($sexo == 'masculino') {
+            return (10 * $peso) + (6.25 * $altura) - (5 * $idade) + 5;
+        } else if ($sexo == 'feminino') {
+            return (10 * $peso) + (6.25 * $altura) - (5 * $idade) - 161;
+        }
     }
 }
